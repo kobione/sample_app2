@@ -1,11 +1,12 @@
+<% provide(:title, 'Welcome, Home Page') %>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Ruby on Rails Tutorial Sample App | Welcome, Home Page</title>
+		<title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %></title>
 	</head>
 
 	<body>
-	<h1>Sample App | Welcome, Home Page</h1>
+		<h1>Sample App | Welcome, Home Page</h1>
 	    <p>
 	    This is the HOME page for the
 	    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
