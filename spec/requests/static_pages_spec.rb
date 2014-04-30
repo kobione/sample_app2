@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe "Static pages (this is a string, for description)" do
+describe "Static pages" do
     
-    describe "Home page (this is a string, also for description)" do
+    describe "Home page" do
     
-        it "should have the content 'Home and Welcome' (a third String, for more detailed description)" do
+        it "should have the content 'Home and Welcome'" do
             visit '/static_pages/home'
             expect(page).to have_content('Welcome, Home Page')
         end
