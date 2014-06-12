@@ -6,6 +6,10 @@ SampleApp2::Application.routes.draw do
   match 'signup', to: 'users#new', via: 'get'
 
   match '/signin', to: 'sessions#new', via: 'get'
+  #NOTE: use of the *resources: session* ABOVE results in automatic 
+  #implementation of /session to be mapped to the sessions#create action
+  #SO, the /signin use of 'new' (once the form button is pressed) 
+  #automatically POSTs the data via /session to sessions#create 
   match '/signout', to: 'sessions#destroy', via: 'delete'  
 
   match 'help', to: 'static_pages#help', via: 'get'
