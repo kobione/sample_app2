@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+    has_many :microposts
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token
 
@@ -23,4 +24,3 @@ class User < ActiveRecord::Base
             self.remember_token = User.hash(User.new_remember_token)
         end
 end
-
