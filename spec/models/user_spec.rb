@@ -121,5 +121,14 @@ describe User do
         it "should have microposts in the correct order" do
             expect(@user.microposts.to_a).to eq [newer_micropost, older_micropost]
         end
+
+        it "should destroy associated microposts" do
+            microposts = @user.microposts.to_a #to_a not only converts to array, but essentially creates a COPY as a local var
+            @user.destroy
+            expect(microposts).not_to be_empty
+            microposts.each do |micropost|
+                expect(Micropost.where(id: micropost.id)).to be_empty
+            end
+        end
     end
 end
